@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pro</title>
-    <script src="https://maxnest0x0.github.io/rysteria"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="loginForm">
-        <label for="uuid">Enter UUID:</label>
-        <input type="text" id="uuid" name="uuid" required>
-        <button type="submit">Login</button>
-    </form>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const uuid = document.getElementById('uuid').value;
-            if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(uuid)) {
-                localStorage.setItem('rivet_account_uuid', uuid);
-                alert('UUID set successfully');
-            } else {
-                alert('Invalid UUID format');
-            }
-        });
-    </script>
+    <iframe src="https://maxnest0x0.github.io/rysteria"></iframe>
 </body>
 </html>

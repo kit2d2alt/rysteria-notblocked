@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="uuid">Enter UUID:</label>
+        <input type="text" id="uuid" name="uuid" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const uuid = document.getElementById('uuid').value;
+            if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(uuid)) {
+                localStorage.setItem('rivet_account_uuid', uuid);
+                alert('UUID set successfully');
+            } else {
+                alert('Invalid UUID format');
+            }
+        });
+    </script>
+</body>
+</html>
